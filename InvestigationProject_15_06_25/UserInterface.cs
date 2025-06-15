@@ -37,7 +37,6 @@ namespace InvestigationProject_15_06_25
                 Console.WriteLine("*                     *");
                 Console.WriteLine("* 1. new game.        *");
                 Console.WriteLine("* 2. exit.            *");
-                Console.WriteLine("*                     *");
                 Console.WriteLine("***********************");
 
             
@@ -65,6 +64,7 @@ namespace InvestigationProject_15_06_25
         {
             GameInstructions.ShowInstructions();
             Console.ReadLine();
+            InvestigationManager investigationManager = new InvestigationManager();
 
         }
 
