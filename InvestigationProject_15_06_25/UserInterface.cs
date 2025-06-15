@@ -31,13 +31,12 @@ namespace InvestigationProject_15_06_25
         private static void ShowMenu()
         {
             
-                Console.WriteLine("Please select one of the following options:\n");
+                TextColor.CyanColor("Please select one of the following options:\n");
 
-                Console.WriteLine("******** MENU *********");
-                Console.WriteLine("*                     *");
-                Console.WriteLine("* 1. new game.        *");
-                Console.WriteLine("* 2. exit.            *");
-                Console.WriteLine("***********************");
+                TextColor.CyanColor("******** MENU *********");
+                TextColor.CyanColor("* 1. new game.        *");
+                TextColor.CyanColor("* 2. exit.            *");
+                TextColor.CyanColor("***********************");
 
             
             
@@ -54,7 +53,7 @@ namespace InvestigationProject_15_06_25
                     HandleChoice2();
                     break;
                 default:
-                    Console.WriteLine("No valid choice was made!");
+                    TextColor.ErrorColor("No valid choice was made!");
                     break;
 
             }
@@ -71,7 +70,7 @@ namespace InvestigationProject_15_06_25
         private static void HandleChoice2()
         {
             Console.Clear();
-            Console.WriteLine("\nGood bye!");
+            TextColor.SuccessfullColor("\nGood bye!");
             flag = false;
 
         }

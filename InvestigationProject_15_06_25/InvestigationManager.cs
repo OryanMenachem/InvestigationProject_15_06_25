@@ -16,8 +16,8 @@ namespace InvestigationProject_15_06_25
 
             iranianAgent = IranianAgentGenerator.GetIranianAgent();
 
-            Console.WriteLine($"The agent to be interrogated is {iranianAgent.Name}" +
-                                $" an Iranian agent of the rank of {iranianAgent.Rank}\n.");
+            Console.WriteLine($"The agent to be interrogated is * {iranianAgent.Name} * " +
+                                $"an Iranian agent of the rank of {iranianAgent.Rank}.\n");
             while (end)
             {
                 flag = true;
@@ -44,7 +44,7 @@ namespace InvestigationProject_15_06_25
         private static void Start(IIranianAgent iranianAgent)
         {
 
-            Console.WriteLine($" Please attach one of the following sensors:\n" +
+            Console.WriteLine($"\nPlease attach one of the following sensors:\n\n" +
                               $"1. Sensor1\n" +
                               $"2. Sensor2\n" +
                               $"3. Sensor3\n" +
@@ -70,7 +70,7 @@ namespace InvestigationProject_15_06_25
                 //    ActivateSensor4(iranianAgent);
                 //    break;
                 default:
-                    Console.WriteLine($"The sensor {sensor} does not exist.!");
+                    TextColor.ErrorColor($"The sensor {sensor} does not exist!");
                     flag = false;
                     break;
 
@@ -104,12 +104,12 @@ namespace InvestigationProject_15_06_25
         {
             if (iranianAgent.SensorsNamesList.Count() == 0) 
             {
-                Console.WriteLine($"Congratulations, you exposed the agent {iranianAgent.Name}");
+                TextColor.SuccessfullColor($"Congratulations! you exposed the agent * {iranianAgent.Name} * \n");
                 end = false; 
             }
 
        
-            Console.WriteLine($"{iranianAgent.SensorsNamesList.Count()} More sensors left to reveal the target.");
+            Console.WriteLine($"{iranianAgent.SensorsNamesList.Count()} More sensors left to reveal the target.\n");
             flag = false;
        
 
