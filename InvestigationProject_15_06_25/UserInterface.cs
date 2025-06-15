@@ -33,11 +33,11 @@ namespace InvestigationProject_15_06_25
             
                 Console.WriteLine("Please select one of the following options:\n");
 
-                Console.WriteLine("********* MENU ********");
+                Console.WriteLine("******** MENU *********");
                 Console.WriteLine("*                     *");
                 Console.WriteLine("* 1. new game.        *");
-                Console.WriteLine("*                     *");
                 Console.WriteLine("* 2. exit.            *");
+                Console.WriteLine("*                     *");
                 Console.WriteLine("***********************");
 
             
@@ -64,6 +64,7 @@ namespace InvestigationProject_15_06_25
         private static void HandleChoice1()
         {
             GameInstructions.ShowInstructions();
+            Console.ReadLine();
 
         }
 
