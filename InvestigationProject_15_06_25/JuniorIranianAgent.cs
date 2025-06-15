@@ -11,9 +11,9 @@ namespace InvestigationProject_15_06_25
         public string Name { get; set; }
 
         public string Rank { get; } = "Junior";
-        public List<ISensors> SensorsList { get; set; } 
+        public List<string> SensorsList { get; set; } 
 
-        public JuniorIranianAgent(string name, List<ISensors> sensorsList)
+        public JuniorIranianAgent(string name, List<string> sensorsList)
         {
             Name = name;
             SensorsList = sensorsList;

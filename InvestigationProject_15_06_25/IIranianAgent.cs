@@ -11,7 +11,7 @@ namespace InvestigationProject_15_06_25
         string Name { get; set; }
 
         string Rank { get;  }
-        List<ISensors> SensorsList { get; set; }
+        List<string> SensorsList { get; set; }
 
 
       

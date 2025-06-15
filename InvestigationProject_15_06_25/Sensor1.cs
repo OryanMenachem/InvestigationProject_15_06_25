@@ -10,9 +10,15 @@ namespace InvestigationProject_15_06_25
     {
         public string SensorName { get; } = "sensor1";
 
-        public string Activate()
+        public bool Activate(IIranianAgent iranianAgent)
         {
-            return SensorName;
+            Console.WriteLine($"{SensorName} action...\n");
+
+            if (iranianAgent.SensorsList.Contains(SensorName) ) { return true; }
+
+            return false;
+            
+         
         }
     }
 }
