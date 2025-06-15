@@ -9,5 +9,7 @@ namespace InvestigationProject_15_06_25
     internal interface ISensors
     {
         string Name { get; }
+
+        string Activate();
     }
 }
