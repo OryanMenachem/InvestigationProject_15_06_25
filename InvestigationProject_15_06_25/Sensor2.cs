@@ -14,7 +14,7 @@ namespace InvestigationProject_15_06_25
         {
             Console.WriteLine($"{SensorName} action...\n");
 
-            if (iranianAgent.SensorsList.Contains(SensorName)) { return true; }
+            if (iranianAgent.SensorsNamesList.Contains(SensorName)) { return true; }
             return false;
 
 
