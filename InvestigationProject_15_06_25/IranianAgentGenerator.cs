@@ -17,8 +17,9 @@ namespace InvestigationProject_15_06_25
             switch (random.Next(0,1)) //
             {
                 case 0:
-                    iranianAgent = new JuniorIranianAgent("h",SensorsList.Sensors);
-                    break;
+                    iranianAgent = new JuniorIranianAgent(NamesOfIranianAgents.FullName,
+                                                           SensorsNamesList.Sensors);
+                 break;
 
 
             }
