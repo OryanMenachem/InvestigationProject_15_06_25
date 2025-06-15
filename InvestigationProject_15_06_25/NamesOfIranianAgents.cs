@@ -26,9 +26,10 @@ namespace InvestigationProject_15_06_25
             return firstName[rand];
         }
 
-        private static string LastName(int rand) {
-            
-            string[] lastName  = {
+        private static string LastName(int rand)
+        {
+
+            string[] lastName = {
                     "Mohammadi", "Hosseini", "Ahmadi", "Ali", "Moradi",
                     "Karimi", "Mousavi", "Jafari", "Rahimi", "Ebrahimi",
                     "Abbasi", "Gholami", "Ghasemi", "Ghorbani", "Akbari",
@@ -36,7 +37,7 @@ namespace InvestigationProject_15_06_25
 
             return lastName[rand];
 
-
+        }
 
     }
 }

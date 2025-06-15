@@ -1,0 +1,123 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace InvestigationProject_15_06_25
+{
+    internal class InvestigationManager
+    {
+        static bool flag = true;
+        static bool end = true;
+        static IIranianAgent iranianAgent;
+        public InvestigationManager()
+        {
+
+            iranianAgent = IranianAgentGenerator.GetIranianAgent();
+
+            Console.WriteLine($"The agent to be interrogated is {iranianAgent.Name}" +
+                                $" an Iranian agent of the rank of {iranianAgent.Rank}\n.");
+            while (end)
+            {
+                flag = true;
+
+                Start(iranianAgent);
+
+                while (!flag)
+                {
+                    Start(iranianAgent);
+                }
+
+                InputSensor();
+                Result(iranianAgent);
+            }
+        }
+
+
+
+
+
+
+
+
+        private static void Start(IIranianAgent iranianAgent)
+        {
+
+            Console.WriteLine($" Please attach one of the following sensors:\n" +
+                              $"1. Sensor1\n" +
+                              $"2. Sensor2\n" +
+                              $"3. Sensor3\n" +
+                              $"4. Sensor4\n");
+        }
+
+        private static void InputSensor()
+        {
+            string sensor = Console.ReadLine().Trim();
+
+            switch (sensor)
+            {
+                case "sensor1":
+                    ActivateSensor1(iranianAgent);
+                    break;
+                case "sensor2":
+                    ActivateSensor2(iranianAgent);
+                    break;
+                //case "sensor3":
+                //    ActivateSensor3(iranianAgent);
+                //    break;
+                //case "sensor4":
+                //    ActivateSensor4(iranianAgent);
+                //    break;
+                default:
+                    Console.WriteLine($"The sensor {sensor} does not exist.!");
+                    flag = false;
+                    break;
+
+            }
+
+        }
+
+        private static void ActivateSensor1(IIranianAgent iranianAgent)
+        {
+            Sensor1 sensor1 = new Sensor1();
+
+            if (sensor1.Activate(iranianAgent)) { iranianAgent.SensorsNamesList.Remove("sensor1"); }
+            flag = false;
+        
+        }
+
+        private static void ActivateSensor2(IIranianAgent iranianAgent)
+        {
+            Sensor2 sensor2 = new Sensor2();
+
+            if (sensor2.Activate(iranianAgent)) { iranianAgent.SensorsNamesList.Remove("sensor2"); }
+                 
+            flag = false;
+        
+
+
+
+        }
+
+        private static void Result(IIranianAgent iranianAgent)
+        {
+            if (iranianAgent.SensorsNamesList.Count() == 0) 
+            {
+                Console.WriteLine($"Congratulations, you exposed the agent {iranianAgent.Name}");
+                end = false; 
+            }
+
+       
+            Console.WriteLine($"{iranianAgent.SensorsNamesList.Count()} More sensors left to reveal the target.");
+            flag = false;
+       
+
+        }
+
+
+
+
+
+    }
+}

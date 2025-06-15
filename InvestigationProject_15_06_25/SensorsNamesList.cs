@@ -8,13 +8,28 @@ namespace InvestigationProject_15_06_25
 {
     internal class SensorsNamesList
     {
-        public static List<string> Sensors { get; } = new List<string>();
+        static Random random = new Random();
+        
+        private static List<string> Sensors = new List<string> { new Sensor1().SensorName, new Sensor1().SensorName };
 
-        public SensorsNamesList()
+
+
+        public static List<string> GetSensorsNamesList(string rankAgent)
         {
-            Sensors.Add(new Sensor1().SensorName);
-            Sensors.Add(new Sensor2().SensorName);
+            List<string> sensorsNameslist = new List<string>();
+
+            switch (rankAgent)
+            {
+                case "junior":
+                    sensorsNameslist.Add(Sensors[random.Next(0, 2)]);
+                    sensorsNameslist.Add(Sensors[random.Next(0, 2)]);
+                        break;
+
+            }
+            return sensorsNameslist;
         }
+
+
 
 
     }

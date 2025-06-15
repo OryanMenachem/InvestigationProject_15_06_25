@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InvestigationProject_15_06_25
 {
-    internal class IranianAgentGenerator
+    internal class IranianAgentGenerator 
     {
         private static Random random = new Random();
         public static IIranianAgent GetIranianAgent()
@@ -14,13 +14,18 @@ namespace InvestigationProject_15_06_25
     
             IIranianAgent iranianAgent = null;
 
-            switch (random.Next(0,1)) //
+            switch (random.Next(0,1)) 
             {
                 case 0:
                     iranianAgent = new JuniorIranianAgent(NamesOfIranianAgents.FullName,
-                                                           SensorsNamesList.Sensors);
+                                                          SensorsNamesList.GetSensorsNamesList("junior"));
                  break;
-
+                    case 1:
+                    Console.WriteLine();
+                    break;
+                default:
+                    Console.WriteLine();
+                    break;
 
             }
             return iranianAgent;
