@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="GameInstructions.cs" />
     <Compile Include="IIranianAgent.cs" />
+    <Compile Include="IranianAgentGenerator.cs" />
     <Compile Include="ISensors.cs" />
     <Compile Include="JuniorIranianAgent.cs" />
     <Compile Include="NamesOfIranianAgents.cs" />
