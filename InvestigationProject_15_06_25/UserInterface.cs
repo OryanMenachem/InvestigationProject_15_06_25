@@ -8,34 +8,43 @@ namespace InvestigationProject_15_06_25
 {
     internal class UserInterface
     {
-        private bool flag = true;
-        public void opening()
+        private static bool flag = true;
+    
+        public static void Run()
         {
+         
             Console.WriteLine("Welcome to the investigation game, \n" +
-                "A game where you will interrogate agents and expose Iranian agents/n");
-
-
-        }
-
-        public void ShowMenu()
-        {
+                                "A game where you will interrogate agents and expose Iranian agents\n");
             while (flag)
             {
+                ShowMenu();
 
-                Console.WriteLine("Please select one of the following options:/n");
+                string cohice = Console.ReadLine().Trim();
 
-                Console.WriteLine("************ MENU ************");
-                Console.WriteLine("*                            *");
-                Console.WriteLine("* 1. New game.               *");
-                Console.WriteLine("*                            *");
-                Console.WriteLine("* 2. Exit.                   *");
-                Console.WriteLine("******************************");
+                MainHandleChoice(cohice);
 
             }
+
             
         }
 
-        public void MainHandleChoice(string choice)
+        private static void ShowMenu()
+        {
+            
+                Console.WriteLine("Please select one of the following options:\n");
+
+                Console.WriteLine("********* MENU ********");
+                Console.WriteLine("*                     *");
+                Console.WriteLine("* 1. new game.        *");
+                Console.WriteLine("*                     *");
+                Console.WriteLine("* 2. exit.            *");
+                Console.WriteLine("***********************");
+
+            
+            
+        }
+
+        private static void MainHandleChoice(string choice)
         {
             switch (choice)
             {
@@ -52,16 +61,17 @@ namespace InvestigationProject_15_06_25
             }
         }
 
-        private void HandleChoice1()
+        private static void HandleChoice1()
         {
 
         }
 
-        private void HandleChoice2()
+        private static void HandleChoice2()
         {
             Console.Clear();
+            Console.WriteLine("\nGood bye!");
             flag = false;
-            Console.WriteLine("Good bye!");
+
         }
 
 
