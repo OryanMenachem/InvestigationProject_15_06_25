@@ -10,7 +10,7 @@ namespace InvestigationProject_15_06_25
     {
         static Random random = new Random();
         
-        private static List<string> Sensors = new List<string> { new Sensor1().SensorName, new Sensor1().SensorName };
+        private static List<string> Sensors = new List<string> { new Sensor1().SensorName, new Sensor2().SensorName };
 
 
 
