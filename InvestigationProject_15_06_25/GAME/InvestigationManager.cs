@@ -70,7 +70,7 @@ namespace InvestigationProject_15_06_25
                 //    ActivateSensor4(iranianAgent);
                 //    break;
                 default:
-                    TextColor.ErrorColor($"The sensor {sensor} does not exist!");
+                    TextColor.ErrorColor($"The sensor '{sensor}', does not exist!");
                     flag = false;
                     break;
 
@@ -83,6 +83,10 @@ namespace InvestigationProject_15_06_25
             Sensor1 sensor1 = new Sensor1();
 
             if (sensor1.Activate(iranianAgent)) { iranianAgent.SensorsNamesList.Remove("sensor1"); }
+            else
+            {
+                Console.WriteLine($"\nThis agent is not affected by the sensor - {sensor1.SensorName}.\n");
+            }
             flag = false;
         
         }
@@ -92,25 +96,33 @@ namespace InvestigationProject_15_06_25
             Sensor2 sensor2 = new Sensor2();
 
             if (sensor2.Activate(iranianAgent)) { iranianAgent.SensorsNamesList.Remove("sensor2"); }
-                 
+            else
+            {
+                Console.WriteLine($"\nThis agent is not affected by the sensor - {sensor2.SensorName}.\n");
+            }
             flag = false;
+            
+        }
         
 
 
 
-        }
 
         private static void Result(IIranianAgent iranianAgent)
         {
-            if (iranianAgent.SensorsNamesList.Count() == 0) 
+            if (iranianAgent.SensorsNamesList.Count() == 0)
             {
                 TextColor.SuccessfullColor($"Congratulations! you exposed the agent * {iranianAgent.Name} * \n");
-                end = false; 
+                Console.WriteLine("To return to the menu, press enter...");
+                Console.ReadLine();
+                Console.Clear();
+                end = false;
             }
-
-       
-            Console.WriteLine($"{iranianAgent.SensorsNamesList.Count()} More sensors left to reveal the target.\n");
-            flag = false;
+            else
+            {
+                Console.WriteLine($"{iranianAgent.SensorsNamesList.Count()} More sensors left to reveal the target.\n");
+                flag = false;
+            }
        
 
         }
