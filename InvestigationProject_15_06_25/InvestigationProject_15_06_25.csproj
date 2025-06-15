@@ -55,6 +55,7 @@
     <Compile Include="Sensor1.cs" />
     <Compile Include="Sensor2.cs" />
     <Compile Include="SensorsNamesList.cs" />
+    <Compile Include="TextColor.cs" />
     <Compile Include="UserInterface.cs" />
   </ItemGroup>
   <ItemGroup>

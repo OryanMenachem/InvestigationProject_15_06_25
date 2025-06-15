@@ -12,7 +12,7 @@ namespace InvestigationProject_15_06_25
 
         public bool Activate(IIranianAgent iranianAgent)
         {
-            Console.WriteLine($"{SensorName} action...\n");
+            TextColor.SuccessfullColor($"{SensorName} action...");
 
             if (iranianAgent.SensorsNamesList.Contains(SensorName)) { return true; }
             return false;
