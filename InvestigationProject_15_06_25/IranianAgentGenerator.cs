@@ -11,6 +11,7 @@ namespace InvestigationProject_15_06_25
         private static Random random = new Random();
         public static IIranianAgent GetIranianAgent()
         {
+    
             IIranianAgent iranianAgent = null;
 
             switch (random.Next(0,1)) //

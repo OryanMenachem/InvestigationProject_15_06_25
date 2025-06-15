@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace InvestigationProject_15_06_25
 {
-    internal interface ISensors
+    internal class Sensor1 : ISensors
     {
-        string SensorName { get; }
+        public string SensorName { get; } = "sensor1";
 
-        string Activate();
+        public string Activate()
+        {
+            return SensorName;
+        }
     }
 }

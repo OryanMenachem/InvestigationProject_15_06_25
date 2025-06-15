@@ -51,6 +51,8 @@
     <Compile Include="NamesOfIranianAgents.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sensor1.cs" />
+    <Compile Include="Sensor2.cs" />
     <Compile Include="UserInterface.cs" />
   </ItemGroup>
   <ItemGroup>
