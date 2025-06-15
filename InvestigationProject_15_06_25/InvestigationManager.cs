@@ -45,10 +45,10 @@ namespace InvestigationProject_15_06_25
         {
 
             Console.WriteLine($"\nPlease attach one of the following sensors:\n\n" +
-                              $"1. Sensor1\n" +
-                              $"2. Sensor2\n" +
-                              $"3. Sensor3\n" +
-                              $"4. Sensor4\n");
+                              $"1. sensor1\n" +
+                              $"2. sensor2\n" +
+                              $"3. sensor3\n" +
+                              $"4. sensor4\n");
         }
 
         private static void InputSensor()
