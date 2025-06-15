@@ -8,8 +8,12 @@ namespace InvestigationProject_15_06_25
 {
     internal interface IIranianAgent
     {
-        string Name { get; }
+        string Name { get; set; }
 
-        List<ISensors> SensorsList { get; }
+        string Rank { get;  }
+        List<ISensors> SensorsList { get; set; }
+
+
+      
     }
 }

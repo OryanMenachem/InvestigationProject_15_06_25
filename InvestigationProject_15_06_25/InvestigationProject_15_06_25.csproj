@@ -46,6 +46,7 @@
     <Compile Include="GameInstructions.cs" />
     <Compile Include="IIranianAgent.cs" />
     <Compile Include="ISensors.cs" />
+    <Compile Include="JuniorIranianAgent.cs" />
     <Compile Include="NamesOfIranianAgents.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
