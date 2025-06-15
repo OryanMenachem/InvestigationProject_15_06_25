@@ -10,6 +10,7 @@ namespace InvestigationProject_15_06_25
     {
         static void Main(string[] args)
         {
+            UserInterface.Run();
         }
     }
 }
