@@ -49,7 +49,7 @@ namespace InvestigationProject_15_06_25
             switch (choice)
             {
                 case "1":
-                    HandleChoice2();
+                    HandleChoice1();
                     break;
                 case "2":
                     HandleChoice2();
@@ -63,6 +63,7 @@ namespace InvestigationProject_15_06_25
 
         private static void HandleChoice1()
         {
+            GameInstructions.ShowInstructions();
 
         }
 
