@@ -16,8 +16,16 @@ namespace InvestigationProject_15_06_25
 
             iranianAgent = IranianAgentGenerator.GetIranianAgent();
 
-            Console.WriteLine($"The agent to be interrogated is * {iranianAgent.Name} * " +
-                                $"an Iranian agent of the rank of {iranianAgent.Rank}.\n");
+            Console.WriteLine();
+            Console.Write("The agent to be interrogated is ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write($"* {iranianAgent.Name} * ");
+            Console.ResetColor();
+            Console.Write("an Iranian agent of the rank of ");
+            Console.ForegroundColor= ConsoleColor.Red;
+            Console.WriteLine($"* {iranianAgent.Rank} *\n");
+            Console.ResetColor();
+
             while (end)
             {
                 flag = true;
@@ -53,7 +61,12 @@ namespace InvestigationProject_15_06_25
 
         private static void InputSensor()
         {
+            Console.Write("\n> ");
+
             string sensor = Console.ReadLine().Trim();
+
+            Console.Clear();
+            Console.WriteLine();
 
             switch (sensor)
             {
@@ -85,7 +98,8 @@ namespace InvestigationProject_15_06_25
             if (sensor1.Activate(iranianAgent)) { iranianAgent.SensorsNamesList.Remove("sensor1"); }
             else
             {
-                Console.WriteLine($"\nThis agent is not affected by the sensor - {sensor1.SensorName}.\n");
+                Console.Write($"\nThis agent is not affected by the sensor - ");  
+                TextColor.CyanColor($"{sensor1.SensorName}.\n");
             }
             flag = false;
         
@@ -98,7 +112,8 @@ namespace InvestigationProject_15_06_25
             if (sensor2.Activate(iranianAgent)) { iranianAgent.SensorsNamesList.Remove("sensor2"); }
             else
             {
-                Console.WriteLine($"\nThis agent is not affected by the sensor - {sensor2.SensorName}.\n");
+                Console.Write($"\nThis agent is not affected by the sensor - ");
+                TextColor.CyanColor($"{sensor2.SensorName}.\n");
             }
             flag = false;
             
@@ -112,15 +127,24 @@ namespace InvestigationProject_15_06_25
         {
             if (iranianAgent.SensorsNamesList.Count() == 0)
             {
-                TextColor.SuccessfullColor($"Congratulations! you exposed the agent * {iranianAgent.Name} * \n");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("Congratulations! you exposed the agent ");
+                Console.ResetColor();
+                Console.WriteLine($"* {iranianAgent.Name} * \n");
+
                 Console.WriteLine("To return to the menu, press enter...");
+
                 Console.ReadLine();
                 Console.Clear();
+                Console.WriteLine();
+
                 end = false;
             }
             else
             {
-                Console.WriteLine($"{iranianAgent.SensorsNamesList.Count()} More sensors left to reveal the target.\n");
+                Console.WriteLine($"{iranianAgent.SensorsNamesList.Count()} " +
+                                 "- More sensors left to reveal the target.\n");
+           
                 flag = false;
             }
        
