@@ -34,7 +34,7 @@ namespace InvestigationProject_15_06_25
             
                 TextColor.CyanColor("Please select one of the following options:\n");
 
-                TextColor.CyanColor("******** MENU *********");
+                TextColor.CyanColor("******* MENU **********  ");
                 TextColor.CyanColor("\n* 1. new game.        *");
                 TextColor.CyanColor("\n* 2. instructions     *");
                 TextColor.CyanColor("\n* 3. exit.            *");

@@ -83,7 +83,7 @@ namespace InvestigationProject_15_06_25
                 //    ActivateSensor4(iranianAgent);
                 //    break;
                 default:
-                    TextColor.ErrorColor($"The sensor '{sensor}', does not exist!");
+                    TextColor.ErrorColor($"The sensor '{sensor}', does not exist!\n");
                     flag = false;
                     break;
 
