@@ -95,26 +95,21 @@ namespace InvestigationProject_15_06_25
         {
             Sensor1 sensor1 = new Sensor1();
 
-            if (sensor1.Activate(iranianAgent)) { iranianAgent.SensorsNamesList.Remove("sensor1"); }
-            else
-            {
-                Console.Write($"\nThis agent is not affected by the sensor - ");  
-                TextColor.CyanColor($"{sensor1.SensorName}.\n");
-            }
+            sensor1.Activate(iranianAgent);
+            
             flag = false;
-        
+           
         }
+          
+            
+        
 
         private static void ActivateSensor2(IIranianAgent iranianAgent)
         {
             Sensor2 sensor2 = new Sensor2();
 
-            if (sensor2.Activate(iranianAgent)) { iranianAgent.SensorsNamesList.Remove("sensor2"); }
-            else
-            {
-                Console.Write($"\nThis agent is not affected by the sensor - ");
-                TextColor.CyanColor($"{sensor2.SensorName}.\n");
-            }
+            sensor2.Activate(iranianAgent);
+          
             flag = false;
             
         }

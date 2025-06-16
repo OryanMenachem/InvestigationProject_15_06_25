@@ -14,7 +14,16 @@ namespace InvestigationProject_15_06_25
         {
             TextColor.SuccessfullColor($"{SensorName} action...\n");
 
-            if (iranianAgent.SensorsNamesList.Contains(SensorName)) { return true; }
+            if (iranianAgent.SensorsNamesList.Contains(SensorName))
+            {
+                iranianAgent.SensorsNamesList.Remove(SensorName);
+
+                return true;
+            }
+
+            Console.Write($"\nThis agent is not affected by the sensor - ");
+            TextColor.CyanColor($"{SensorName}.\n");
+
             return false;
 
 
