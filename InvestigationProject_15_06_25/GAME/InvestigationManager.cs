@@ -16,15 +16,7 @@ namespace InvestigationProject_15_06_25
 
             iranianAgent = IranianAgentGenerator.GetIranianAgent();
 
-            Console.WriteLine();
-            Console.Write("The agent to be interrogated is ");
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write($"* {iranianAgent.Name} * ");
-            Console.ResetColor();
-            Console.Write("an Iranian agent of the rank of ");
-            Console.ForegroundColor= ConsoleColor.Red;
-            Console.WriteLine($"* {iranianAgent.Rank} *\n");
-            Console.ResetColor();
+            OpeningMessage();
 
             while (end)
             {
@@ -44,7 +36,20 @@ namespace InvestigationProject_15_06_25
 
 
 
+        private static void OpeningMessage()
+        {
 
+            Console.WriteLine();
+            Console.Write("The agent to be interrogated is ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write($"* {iranianAgent.Name} * ");
+            Console.ResetColor();
+            Console.Write("an Iranian agent of the rank of ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"* {iranianAgent.Rank} *\n");
+            Console.ResetColor();
+
+        }
 
 
 
