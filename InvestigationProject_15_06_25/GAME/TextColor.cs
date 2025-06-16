@@ -11,16 +11,18 @@ namespace InvestigationProject_15_06_25
     {
         public static void ErrorColor(string text)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"\n{text}\n");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine($"{text}");
             Console.ResetColor();
+
         }
 
         public static void SuccessfullColor(string text)
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"\n{text}\n");
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine($"{text}");
             Console.ResetColor();
+
 
            
         }
@@ -28,9 +30,19 @@ namespace InvestigationProject_15_06_25
         public static void CyanColor(string text)
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"{text}\n");
+            Console.WriteLine($"{text} ");
             Console.ResetColor();
+
         }
+
+        public static void RedColor(string text)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"{text} ");
+            Console.ResetColor();
+ 
+        }
+
 
 
 

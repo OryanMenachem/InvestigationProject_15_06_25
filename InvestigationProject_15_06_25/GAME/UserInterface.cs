@@ -14,14 +14,15 @@ namespace InvestigationProject_15_06_25
         {
          
             Console.WriteLine("Welcome to the investigation game, \n" +
-                                "A game where you will interrogate agents and expose Iranian agents\n");
+                                "A game where you will interrogate agents and expose Iranian agents.\n");
             while (flag)
             {
                 ShowMenu();
 
+                Console.Write("\n> ");
                 string cohice = Console.ReadLine().Trim();
 
-                MainHandleChoice(cohice);
+                HandleChoice(cohice);
 
             }
 
@@ -34,43 +35,54 @@ namespace InvestigationProject_15_06_25
                 TextColor.CyanColor("Please select one of the following options:\n");
 
                 TextColor.CyanColor("******** MENU *********");
-                TextColor.CyanColor("* 1. new game.        *");
-                TextColor.CyanColor("* 2. exit.            *");
-                TextColor.CyanColor("***********************");
+                TextColor.CyanColor("\n* 1. new game.        *");
+                TextColor.CyanColor("\n* 2. instructions     *");
+                TextColor.CyanColor("\n* 3. exit.            *");
+                TextColor.CyanColor("\n***********************");
 
             
             
         }
 
-        private static void MainHandleChoice(string choice)
+        private static void HandleChoice(string choice)
         {
+            Console.Clear();
+
             switch (choice)
             {
                 case "1":
-                    HandleChoice1();
+                    NewGame();
                     break;
                 case "2":
-                    HandleChoice2();
+                    Instructions();
+                    break;
+                case "3":
+                    Exit();
                     break;
                 default:
-                    TextColor.ErrorColor("No valid choice was made!");
+                    TextColor.ErrorColor("No valid choice was made!\n");
                     break;
 
             }
         }
 
-        private static void HandleChoice1()
+        private static void NewGame()
         {
-            GameInstructions.ShowInstructions();
-            Console.ReadLine();
             InvestigationManager investigationManager = new InvestigationManager();
 
         }
 
-        private static void HandleChoice2()
+        private static void Instructions()
+        {
+            GameInstructions.ShowInstructions();
+
+        }
+
+        private static void Exit()
         {
             Console.Clear();
-            TextColor.SuccessfullColor("\nGood bye!");
+            Console.WriteLine();
+            TextColor.CyanColor("Good bye!");
             flag = false;
 
         }
