@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using InvestigationProject_15_06_25.IranianAgent;
+using InvestigationProject_15_06_25.IranianAgent.Iranian_agent_generators;
 
 namespace InvestigationProject_15_06_25
 {
@@ -18,9 +19,9 @@ namespace InvestigationProject_15_06_25
 
             Random random = new Random();
 
-            List<string> iranianAgentsRanks = new List<string>() {"junior"}; // List of ranks of all established Iranian agents
+            List<string> iranianAgentsRanks = new List<string>() {"junior", "Squad Leader" }; // List of ranks of all established Iranian agents
 
-            string randomRank = iranianAgentsRanks[random.Next(0, 1)]; 
+            string randomRank = iranianAgentsRanks[random.Next(0, 2)]; // לשנות ל -2 בהתאם
 
             IIranianAgent iranianAgent = null;
 
@@ -29,6 +30,10 @@ namespace InvestigationProject_15_06_25
                 case "junior":
                     iranianAgent = new JuniorIranianAgentGenerator().GenerateAgent();
                  break;
+
+                case "Squad Leader":
+                    iranianAgent = new SquadLeaderAgentGenerator().GenerateAgent();
+                    break;
 
                 default:
                     Console.WriteLine();

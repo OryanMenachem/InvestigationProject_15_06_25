@@ -11,7 +11,7 @@ namespace InvestigationProject_15_06_25
     {
         private Random random = new Random();
         
-        private List<string> Sensors = new List<string> { new Sensor1().SensorName, new Sensor2().SensorName, new PulseSensor().SensorName};
+        private readonly List<string> Sensors = new List<string> { new Sensor1().SensorName, new Sensor2().SensorName, new PulseSensor().SensorName};
 
 
 
@@ -22,23 +22,20 @@ namespace InvestigationProject_15_06_25
             switch (rankAgent)
             {
                 case "junior":
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
+                    sensorsNameslist.Add(Sensors[random.Next(0, 2)]); 
+                    sensorsNameslist.Add(Sensors[random.Next(0, 2)]); 
                         break;
+
+                case "Squad Leader":
+                    sensorsNameslist.Add(Sensors[random.Next(0, 4)]); 
+                    sensorsNameslist.Add(Sensors[random.Next(0, 4)]); 
+                    sensorsNameslist.Add(Sensors[random.Next(0, 4)]); 
+                    sensorsNameslist.Add(Sensors[random.Next(0, 4)]); 
+                    break;
+
+                    default:
+                    Console.WriteLine();
+                    break;
 
             }
             return sensorsNameslist;

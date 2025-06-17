@@ -100,6 +100,9 @@ namespace InvestigationProject_15_06_25
         {
             Sensor1 sensor1 = new Sensor1();
 
+            iranianAgent.AttachedSensors.Add(sensor1);
+      
+
             sensor1.Activate(iranianAgent);
             
             flag = false;
@@ -110,6 +113,8 @@ namespace InvestigationProject_15_06_25
         {
             Sensor2 sensor2 = new Sensor2();
 
+            iranianAgent.AttachedSensors.Add(sensor2);
+
             sensor2.Activate(iranianAgent);
           
             flag = false;
@@ -119,6 +124,10 @@ namespace InvestigationProject_15_06_25
         private void ActivatePulseSensor()
         {
             PulseSensor pulseSensor = new PulseSensor();
+
+
+            iranianAgent.AttachedSensors.Add(pulseSensor);
+            iranianAgent.Count += 1;
 
             pulseSensor.Activate(iranianAgent);
 
