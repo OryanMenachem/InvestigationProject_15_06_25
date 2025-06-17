@@ -9,16 +9,16 @@ namespace InvestigationProject_15_06_25
 {
     internal class GetRandIranianAgent 
     {
-       /// <summary>
-       /// מחזיר סוכן איראני בדרגה אקראית
-       /// </summary>
-       /// <returns></returns>
-        public static IIranianAgent GetIranianAgent()
+        /// <summary>
+        /// Returns an Iranian agent at a random rank
+        /// </summary>
+        /// <returns></returns>
+        public IIranianAgent GetIranianAgent()
         {
 
             Random random = new Random();
 
-            List<string> iranianAgentsRanks = new List<string>() {"junior"}; // רשימת דרגות של כל הסוכנם האיראניים הקימים
+            List<string> iranianAgentsRanks = new List<string>() {"junior"}; // List of ranks of all established Iranian agents
 
             string randomRank = iranianAgentsRanks[random.Next(0, 1)]; 
 
@@ -27,7 +27,7 @@ namespace InvestigationProject_15_06_25
             switch (randomRank) 
             {
                 case "junior":
-                    iranianAgent = JuniorIranianAgentGenerator.GenerateAgent();
+                    iranianAgent = new JuniorIranianAgentGenerator().GenerateAgent();
                  break;
 
                 default:

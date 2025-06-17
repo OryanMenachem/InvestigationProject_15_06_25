@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleDesign.cs" />
     <Compile Include="GAME\GameInstructions.cs" />
     <Compile Include="IranianAgent\Agent\IIranianAgent.cs" />
     <Compile Include="GAME\InvestigationManager.cs" />
@@ -57,7 +58,6 @@
     <Compile Include="Sensors\Sensor1.cs" />
     <Compile Include="Sensors\Sensor2.cs" />
     <Compile Include="Sensors\SensorsNamesList.cs" />
-    <Compile Include="GAME\TextColor.cs" />
     <Compile Include="GAME\UserInterface.cs" />
   </ItemGroup>
   <ItemGroup>

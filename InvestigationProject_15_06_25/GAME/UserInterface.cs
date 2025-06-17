@@ -12,15 +12,14 @@ namespace InvestigationProject_15_06_25
     
         public static void Run()
         {
-         
-            Console.WriteLine("Welcome to the investigation game, \n" +
-                                "A game where you will interrogate agents and expose Iranian agents.\n");
+            DisplayOpeningMessage();
+
             while (flag)
             {
-                ShowMenu();
 
-                Console.Write("\n> ");
-                string cohice = Console.ReadLine().Trim();
+                DisplayMenu();
+
+                string cohice = ConsoleDesign.Input();
 
                 HandleChoice(cohice);
 
@@ -29,16 +28,24 @@ namespace InvestigationProject_15_06_25
             
         }
 
-        private static void ShowMenu()
+        private static void DisplayOpeningMessage()
+        {
+
+            Console.WriteLine("Welcome to the investigation game, \n" +
+                                "A game where you will interrogate agents and expose Iranian agents.\n");
+
+        }
+
+        private static void DisplayMenu()
         {
             
-                TextColor.CyanColor("Please select one of the following options:\n");
+                ConsoleDesign.CyanColor("Please select one of the following options:\n");
 
-                TextColor.CyanColor("******* MENU **********  ");
-                TextColor.CyanColor("\n* 1. new game.        *");
-                TextColor.CyanColor("\n* 2. instructions     *");
-                TextColor.CyanColor("\n* 3. exit.            *");
-                TextColor.CyanColor("\n***********************");
+                ConsoleDesign.CyanColor("\n******* MENU **********");
+                ConsoleDesign.CyanColor("\n* 1. new game.        *");
+                ConsoleDesign.CyanColor("\n* 2. instructions     *");
+                ConsoleDesign.CyanColor("\n* 3. exit.            *");
+                ConsoleDesign.CyanColor("\n***********************");
 
             
             
@@ -46,21 +53,19 @@ namespace InvestigationProject_15_06_25
 
         private static void HandleChoice(string choice)
         {
-            Console.Clear();
-
             switch (choice)
             {
                 case "1":
                     NewGame();
                     break;
                 case "2":
-                    Instructions();
+                    DisplayInstructions();
                     break;
                 case "3":
                     Exit();
                     break;
                 default:
-                    TextColor.ErrorColor("No valid choice was made!\n");
+                    ConsoleDesign.ErrorColor("No valid choice was made!\n");
                     break;
 
             }
@@ -69,10 +74,14 @@ namespace InvestigationProject_15_06_25
         private static void NewGame()
         {
             InvestigationManager investigationManager = new InvestigationManager();
+            investigationManager.GameManager();
 
         }
 
-        private static void Instructions()
+        /// <summary>
+        /// Prints game instructions to the console
+        /// </summary>
+        private static void DisplayInstructions()
         {
             GameInstructions.ShowInstructions();
 
@@ -82,7 +91,7 @@ namespace InvestigationProject_15_06_25
         {
             Console.Clear();
             Console.WriteLine();
-            TextColor.CyanColor("Good bye!");
+            ConsoleDesign.CyanColor("Good bye!");
             flag = false;
 
         }

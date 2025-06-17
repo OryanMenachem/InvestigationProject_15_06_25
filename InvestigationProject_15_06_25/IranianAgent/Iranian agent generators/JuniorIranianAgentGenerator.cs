@@ -10,11 +10,11 @@ namespace InvestigationProject_15_06_25.IranianAgent
     {
        
 
-        public static IIranianAgent GenerateAgent()
+        public IIranianAgent GenerateAgent()
         {
             IIranianAgent juniorIranianAgent = new JuniorIranianAgent()
             {
-                Name = IranianAgentsNames.FullName,
+                Name = new IranianAgentsNames().fullName(),
                 SensitiveToSensors = SensorsNamesList.GetSensorsNamesList("junior")
             };
             return juniorIranianAgent;
