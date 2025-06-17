@@ -15,6 +15,10 @@ namespace InvestigationProject_15_06_25
         List<string> SensitiveToSensors { get; set; }
         List<ISensors> AttachedSensors { get; set; }
 
+        int Count { get; set; }
+
+        void CounterStrike();
+
 
 
 
