@@ -54,19 +54,17 @@ namespace InvestigationProject_15_06_25
 
             Console.WriteLine($"\nPlease attach one of the following sensors:\n\n" +
                               $"1. sensor1\n" +
-                              $"2. sensor2\n" +
-                              $"3. sensor3\n" +
-                              $"4. sensor4\n");
+                              $"2. sensor2\n");
+                          
         }
 
         private static void InputSensor()
         {
-            Console.Write("\n> ");
 
-            string sensor = Console.ReadLine().Trim();
 
-            Console.Clear();
-            Console.WriteLine();
+            string sensor = ConsoleDesign.Input();
+
+           
 
             switch (sensor)
             {
@@ -76,14 +74,8 @@ namespace InvestigationProject_15_06_25
                 case "sensor2":
                     ActivateSensor2(iranianAgent);
                     break;
-                //case "sensor3":
-                //    ActivateSensor3(iranianAgent);
-                //    break;
-                //case "sensor4":
-                //    ActivateSensor4(iranianAgent);
-                //    break;
                 default:
-                    TextColor.ErrorColor($"The sensor '{sensor}', does not exist!\n");
+                    ConsoleDesign.ErrorColor($"The sensor '{sensor}', does not exist!\n");
                     flag = false;
                     break;
 

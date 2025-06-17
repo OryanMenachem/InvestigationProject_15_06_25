@@ -1,14 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace InvestigationProject_15_06_25
 {
-    internal class TextColor
+    internal class ConsoleDesign
     {
+        public static string Input()
+        {
+            Console.Write(">");
+
+            string input = Console.ReadLine().Trim();
+
+            Console.Clear();
+            Console.WriteLine();
+
+            return input;
+        }
+
         public static void ErrorColor(string text)
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -24,7 +35,7 @@ namespace InvestigationProject_15_06_25
             Console.ResetColor();
 
 
-           
+
         }
 
         public static void CyanColor(string text)
@@ -40,11 +51,8 @@ namespace InvestigationProject_15_06_25
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"{text} ");
             Console.ResetColor();
- 
+
         }
-
-
-
 
     }
 }

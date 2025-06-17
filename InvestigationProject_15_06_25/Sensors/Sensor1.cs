@@ -12,7 +12,7 @@ namespace InvestigationProject_15_06_25
 
         public bool Activate(IIranianAgent iranianAgent)
         {
-            TextColor.SuccessfullColor($"{SensorName} action...\n");
+            ConsoleDesign.SuccessfullColor($"{SensorName} action...\n");
 
             if (iranianAgent.SensitiveToSensors.Contains(SensorName) ) 
             {
@@ -22,7 +22,7 @@ namespace InvestigationProject_15_06_25
             }
 
             Console.Write($"\nThis agent is not affected by the sensor - ");
-            TextColor.CyanColor($"{SensorName}.\n");
+            ConsoleDesign.CyanColor($"{SensorName}.\n");
 
             return false;
             
