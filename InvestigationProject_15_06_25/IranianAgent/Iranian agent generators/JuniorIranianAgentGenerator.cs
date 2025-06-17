@@ -14,8 +14,8 @@ namespace InvestigationProject_15_06_25.IranianAgent
         {
             IIranianAgent juniorIranianAgent = new JuniorIranianAgent()
             {
-                Name = new IranianAgentsNames().fullName(),
-                SensitiveToSensors = SensorsNamesList.GetSensorsNamesList("junior")
+                Name = new IranianAgentsNames().FullName(),
+                SensitiveToSensors = new SensorsNamesList().GetSensorsNamesList("junior")
             };
             return juniorIranianAgent;
         }

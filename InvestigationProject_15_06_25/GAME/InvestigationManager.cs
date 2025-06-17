@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using InvestigationProject_15_06_25.IranianAgent;
 
 namespace InvestigationProject_15_06_25
 {
@@ -11,6 +12,7 @@ namespace InvestigationProject_15_06_25
         private bool flag;
         private bool end;
         private IIranianAgent iranianAgent;
+
         public InvestigationManager()
         {
             iranianAgent = new GetRandIranianAgent().GetIranianAgent();
@@ -42,7 +44,6 @@ namespace InvestigationProject_15_06_25
 
         }
 
-
         private void DisplayAgentNameAndRank()
         {
 
@@ -59,9 +60,10 @@ namespace InvestigationProject_15_06_25
         private void DisplaySensors()
         {
 
-            Console.WriteLine($"\nPlease attach one of the following sensors:\n" +
+            Console.WriteLine($"\nPlease attach one of the following sensors:\n\n" +
                               $"1. sensor1\n" +
-                              $"2. sensor2\n");
+                              $"2. sensor2\n" +
+                              $"3. pulse sensor\n");
                           
         }
 
@@ -78,6 +80,9 @@ namespace InvestigationProject_15_06_25
                     break;
                 case "sensor2":
                     ActivateSensor2();
+                    break;
+                case "pulse sensor":
+                    ActivatePulseSensor();
                     break;
                 default:
                     ConsoleDesign.ErrorColor($"The sensor '{sensor}', does not exist!\n");
@@ -101,14 +106,6 @@ namespace InvestigationProject_15_06_25
            
         }
 
-
-
-
-
-          
-            
-        
-
         private void ActivateSensor2()
         {
             Sensor2 sensor2 = new Sensor2();
@@ -118,10 +115,16 @@ namespace InvestigationProject_15_06_25
             flag = false;
             
         }
-        
 
+        private void ActivatePulseSensor()
+        {
+            PulseSensor pulseSensor = new PulseSensor();
 
+            pulseSensor.Activate(iranianAgent);
 
+            flag = false;
+
+        }
 
         private void Result()
         {
@@ -158,6 +161,18 @@ namespace InvestigationProject_15_06_25
   
 
         }
+
+
+          
+            
+        
+
+        
+
+
+
+
+
 
 
 

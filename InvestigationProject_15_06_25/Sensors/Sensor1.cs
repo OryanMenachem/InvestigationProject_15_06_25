@@ -10,21 +10,22 @@ namespace InvestigationProject_15_06_25
     {
         public string SensorName { get; } = "sensor1";
 
-        public bool Activate(IIranianAgent iranianAgent)
+        public void Activate(IIranianAgent iranianAgent)
         {
             ConsoleDesign.SuccessfullColor($"{SensorName} action...\n");
 
-            if (iranianAgent.SensitiveToSensors.Contains(SensorName) ) 
+            if (iranianAgent.SensitiveToSensors.Contains(SensorName))
             {
                 iranianAgent.SensitiveToSensors.Remove(SensorName);
 
-                return true; 
+
             }
-
-            Console.Write($"\nThis agent is not affected by the sensor - ");
-            ConsoleDesign.CyanColor($"{SensorName}.\n");
-
-            return false;
+            else
+            {
+                Console.Write($"\nThis agent is not affected by the sensor - ");
+                ConsoleDesign.CyanColor($"{SensorName}.\n");
+            }
+          
             
         }
          
