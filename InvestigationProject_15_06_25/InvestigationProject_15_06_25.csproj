@@ -50,6 +50,7 @@
     <Compile Include="IranianAgent\Iranian agent generators\IIranianAgentGenerator.cs" />
     <Compile Include="IranianAgent\GetRandIranianAgent.cs" />
     <Compile Include="IranianAgent\Iranian agent generators\JuniorIranianAgentGenerator.cs" />
+    <Compile Include="Sensors\PulseSensor.cs" />
     <Compile Include="Sensors\ISensors.cs" />
     <Compile Include="IranianAgent\Agent\JuniorIranianAgent.cs" />
     <Compile Include="IranianAgent\IranianAgentsNames.cs" />

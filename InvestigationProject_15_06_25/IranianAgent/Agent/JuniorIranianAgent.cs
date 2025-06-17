@@ -11,7 +11,7 @@ namespace InvestigationProject_15_06_25
         public int Id { get; set; }
         public string Name { get; set; }
         public string Rank { get; } = "Junior";
-        public List<string> SensitiveToSensors { get; set; } = new List<string>(2); // רק שני סנסורים לחשיפה
+        public List<string> SensitiveToSensors { get; set; } = new List<string>(); // רק שני סנסורים לחשיפה
         public List<ISensors> AttachedSensors { get; set; }
 
       

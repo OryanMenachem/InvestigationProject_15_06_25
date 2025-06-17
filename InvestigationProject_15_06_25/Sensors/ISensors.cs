@@ -10,6 +10,6 @@ namespace InvestigationProject_15_06_25
     {
         string SensorName { get; }
 
-        bool Activate(IIranianAgent iranianAgent);
+        void Activate(IIranianAgent iranianAgent);
     }
 }
