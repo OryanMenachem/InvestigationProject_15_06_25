@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InvestigationProject_15_06_25
 {
-    internal class NamesOfIranianAgents
+    internal class IranianAgentsNames
     {
         static Random random = new Random();
 
