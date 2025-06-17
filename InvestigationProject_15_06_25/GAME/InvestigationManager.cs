@@ -8,38 +8,50 @@ namespace InvestigationProject_15_06_25
 {
     internal class InvestigationManager
     {
-        static bool flag = true;
-        static bool end = true;
+        static bool flag;
+        static bool end;
         static IIranianAgent iranianAgent;
         public InvestigationManager()
         {
 
             iranianAgent = GetRandIranianAgent.GetIranianAgent();
+            flag = true;
+            end = true;
+        }
 
-            Console.WriteLine();
-            Console.Write("The agent to be interrogated is ");
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write($"* {iranianAgent.Name} * ");
-            Console.ResetColor();
-            Console.Write("an Iranian agent of the rank of ");
-            Console.ForegroundColor= ConsoleColor.Red;
-            Console.WriteLine($"* {iranianAgent.Rank} *\n");
-            Console.ResetColor();
+        public void Manager() 
+        { 
+            DisplayAgentNameAndRank();
 
             while (end)
             {
                 flag = true;
 
-                Start(iranianAgent);
+                DisplaySensors(iranianAgent);
 
                 while (!flag)
                 {
-                    Start(iranianAgent);
+                    DisplaySensors(iranianAgent);
                 }
 
                 InputSensor();
                 Result(iranianAgent);
             }
+
+        }
+
+
+        private static void DisplayAgentNameAndRank()
+        {
+
+            Console.Write("The agent to be interrogated is ");
+
+            ConsoleDesign.RedColor($"* {iranianAgent.Name} * ", false);
+
+            Console.Write("an Iranian agent of the rank of ");
+
+            ConsoleDesign.RedColor($"* {iranianAgent.Rank} *\n");
+
         }
 
 
@@ -48,11 +60,10 @@ namespace InvestigationProject_15_06_25
 
 
 
-
-        private static void Start(IIranianAgent iranianAgent)
+        private static void DisplaySensors(IIranianAgent iranianAgent)
         {
 
-            Console.WriteLine($"\nPlease attach one of the following sensors:\n\n" +
+            Console.WriteLine($"\nPlease attach one of the following sensors:\n" +
                               $"1. sensor1\n" +
                               $"2. sensor2\n");
                           
@@ -114,18 +125,11 @@ namespace InvestigationProject_15_06_25
         {
             if (iranianAgent.SensitiveToSensors.Count() == 0)
             {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.Write("Congratulations! you exposed the agent ");
-                Console.ResetColor();
-                Console.WriteLine($"* {iranianAgent.Name} * \n");
-
-                Console.WriteLine("To return to the menu, press enter...");
-
-                Console.ReadLine();
-                Console.Clear();
-                Console.WriteLine();
+                
+                DisplaySuccessMessage();
 
                 end = false;
+
             }
             else
             {
@@ -134,7 +138,22 @@ namespace InvestigationProject_15_06_25
            
                 flag = false;
             }
+
        
+
+        }
+
+        private static void DisplaySuccessMessage()
+        {
+            ConsoleDesign.SuccessfullColor("Congratulations! you exposed the agent - ", false);
+
+            ConsoleDesign.RedColor($" {iranianAgent.Name}.\n");
+
+            Console.Write("To return to the menu, press enter... ");
+
+            Console.ReadLine();
+            Console.Clear();
+  
 
         }
 

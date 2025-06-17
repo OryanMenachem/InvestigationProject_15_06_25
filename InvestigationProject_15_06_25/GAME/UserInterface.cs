@@ -16,8 +16,8 @@ namespace InvestigationProject_15_06_25
 
             while (flag)
             {
-                DisplayMenu();
 
+                DisplayMenu();
 
                 string cohice = ConsoleDesign.Input();
 
@@ -41,7 +41,7 @@ namespace InvestigationProject_15_06_25
             
                 ConsoleDesign.CyanColor("Please select one of the following options:\n");
 
-                ConsoleDesign.CyanColor("******* MENU **********  ");
+                ConsoleDesign.CyanColor("\n******* MENU **********");
                 ConsoleDesign.CyanColor("\n* 1. new game.        *");
                 ConsoleDesign.CyanColor("\n* 2. instructions     *");
                 ConsoleDesign.CyanColor("\n* 3. exit.            *");
@@ -74,6 +74,7 @@ namespace InvestigationProject_15_06_25
         private static void NewGame()
         {
             InvestigationManager investigationManager = new InvestigationManager();
+            investigationManager.Manager();
 
         }
 

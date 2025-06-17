@@ -14,7 +14,7 @@ namespace InvestigationProject_15_06_25
         /// <returns></returns>
         public static string Input()
         {
-            Console.Write(">");
+            Console.Write("\n> ");
 
             string input = Console.ReadLine().Trim();
 
@@ -24,37 +24,76 @@ namespace InvestigationProject_15_06_25
             return input;
         }
 
-        public static void ErrorColor(string text)
+        public static void ErrorColor(string text, bool newLine = true)
         {
-            Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine($"{text}");
-            Console.ResetColor();
+            if (newLine)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine($"{text}");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.Write($"{text}");
+                Console.ResetColor();
+            }
+
 
         }
 
-        public static void SuccessfullColor(string text)
+        public static void SuccessfullColor(string text, bool newLine = true)
         {
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.WriteLine($"{text}");
-            Console.ResetColor();
+            if (newLine)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine($"{text}");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.Write($"{text}");
+                Console.ResetColor();
+
+            }
 
 
 
         }
 
-        public static void CyanColor(string text)
+        public static void CyanColor(string text, bool newLine = true)
         {
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"{text} ");
-            Console.ResetColor();
+            if (newLine)
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine($"{text} ");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.Write($"{text} ");
+                Console.ResetColor();
+
+            }
 
         }
 
-        public static void RedColor(string text)
+        public static void RedColor(string text, bool newLine = true)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"{text} ");
-            Console.ResetColor();
+            if (newLine)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"{text} ");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write($"{text} ");
+                Console.ResetColor();
+            }
 
         }
 
