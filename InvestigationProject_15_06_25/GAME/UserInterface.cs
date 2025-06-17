@@ -12,15 +12,14 @@ namespace InvestigationProject_15_06_25
     
         public static void Run()
         {
-         
-            Console.WriteLine("Welcome to the investigation game, \n" +
-                                "A game where you will interrogate agents and expose Iranian agents.\n");
+            DisplayOpeningMessage();
+
             while (flag)
             {
-                ShowMenu();
+                DisplayMenu();
 
-                Console.Write("\n> ");
-                string cohice = Console.ReadLine().Trim();
+
+                string cohice = ConsoleDesign.Input();
 
                 HandleChoice(cohice);
 
@@ -29,7 +28,15 @@ namespace InvestigationProject_15_06_25
             
         }
 
-        private static void ShowMenu()
+        private static void DisplayOpeningMessage()
+        {
+
+            Console.WriteLine("Welcome to the investigation game, \n" +
+                                "A game where you will interrogate agents and expose Iranian agents.\n");
+
+        }
+
+        private static void DisplayMenu()
         {
             
                 ConsoleDesign.CyanColor("Please select one of the following options:\n");
@@ -46,15 +53,13 @@ namespace InvestigationProject_15_06_25
 
         private static void HandleChoice(string choice)
         {
-            Console.Clear();
-
             switch (choice)
             {
                 case "1":
                     NewGame();
                     break;
                 case "2":
-                    Instructions();
+                    DisplayInstructions();
                     break;
                 case "3":
                     Exit();
@@ -72,7 +77,10 @@ namespace InvestigationProject_15_06_25
 
         }
 
-        private static void Instructions()
+        /// <summary>
+        /// Prints game instructions to the console
+        /// </summary>
+        private static void DisplayInstructions()
         {
             GameInstructions.ShowInstructions();
 

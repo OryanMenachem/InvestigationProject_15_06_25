@@ -8,6 +8,10 @@ namespace InvestigationProject_15_06_25
 {
     internal class ConsoleDesign
     {
+        /// <summary>
+        ///  Console.ReadLine().Trim() with sign '>'
+        /// </summary>
+        /// <returns></returns>
         public static string Input()
         {
             Console.Write(">");
