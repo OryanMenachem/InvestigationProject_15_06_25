@@ -14,7 +14,7 @@ namespace InvestigationProject_15_06_25
         public InvestigationManager()
         {
 
-            iranianAgent = IranianAgentGenerator.GetIranianAgent();
+            iranianAgent = GetRandIranianAgent.GetIranianAgent();
 
             Console.WriteLine();
             Console.Write("The agent to be interrogated is ");
@@ -120,7 +120,7 @@ namespace InvestigationProject_15_06_25
 
         private static void Result(IIranianAgent iranianAgent)
         {
-            if (iranianAgent.SensorsNamesList.Count() == 0)
+            if (iranianAgent.SensitiveToSensors.Count() == 0)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("Congratulations! you exposed the agent ");
@@ -137,7 +137,7 @@ namespace InvestigationProject_15_06_25
             }
             else
             {
-                Console.WriteLine($"{iranianAgent.SensorsNamesList.Count()} " +
+                Console.WriteLine($"{iranianAgent.SensitiveToSensors.Count()} " +
                                  "- More sensors left to reveal the target.\n");
            
                 flag = false;

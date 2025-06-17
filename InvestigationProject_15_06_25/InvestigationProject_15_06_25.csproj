@@ -44,12 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GAME\GameInstructions.cs" />
-    <Compile Include="IranianAgent\IIranianAgent.cs" />
+    <Compile Include="IranianAgent\Agent\IIranianAgent.cs" />
     <Compile Include="GAME\InvestigationManager.cs" />
-    <Compile Include="IranianAgent\IranianAgentGenerator.cs" />
+    <Compile Include="IranianAgent\Iranian agent generators\IIranianAgentGenerator.cs" />
+    <Compile Include="IranianAgent\GetRandIranianAgent.cs" />
+    <Compile Include="IranianAgent\Iranian agent generators\JuniorIranianAgentGenerator.cs" />
     <Compile Include="Sensors\ISensors.cs" />
-    <Compile Include="IranianAgent\JuniorIranianAgent.cs" />
-    <Compile Include="IranianAgent\NamesOfIranianAgents.cs" />
+    <Compile Include="IranianAgent\Agent\JuniorIranianAgent.cs" />
+    <Compile Include="IranianAgent\IranianAgentsNames.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sensors\Sensor1.cs" />

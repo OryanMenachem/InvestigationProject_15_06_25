@@ -14,9 +14,9 @@ namespace InvestigationProject_15_06_25
         {
             TextColor.SuccessfullColor($"{SensorName} action...\n");
 
-            if (iranianAgent.SensorsNamesList.Contains(SensorName))
+            if (iranianAgent.SensitiveToSensors.Contains(SensorName))
             {
-                iranianAgent.SensorsNamesList.Remove(SensorName);
+                iranianAgent.SensitiveToSensors.Remove(SensorName);
 
                 return true;
             }
