@@ -11,6 +11,7 @@ namespace InvestigationProject_15_06_25
         private bool flag;
         private bool end;
         private IIranianAgent iranianAgent;
+
         public InvestigationManager()
         {
             iranianAgent = new GetRandIranianAgent().GetIranianAgent();
@@ -41,7 +42,6 @@ namespace InvestigationProject_15_06_25
        
 
         }
-
 
         private void DisplayAgentNameAndRank()
         {
@@ -101,14 +101,6 @@ namespace InvestigationProject_15_06_25
            
         }
 
-
-
-
-
-          
-            
-        
-
         private void ActivateSensor2()
         {
             Sensor2 sensor2 = new Sensor2();
@@ -118,10 +110,6 @@ namespace InvestigationProject_15_06_25
             flag = false;
             
         }
-        
-
-
-
 
         private void Result()
         {
@@ -158,6 +146,18 @@ namespace InvestigationProject_15_06_25
   
 
         }
+
+
+          
+            
+        
+
+        
+
+
+
+
+
 
 
 
