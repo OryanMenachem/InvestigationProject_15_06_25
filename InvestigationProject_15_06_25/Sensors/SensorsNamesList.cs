@@ -24,20 +24,6 @@ namespace InvestigationProject_15_06_25
                 case "junior":
                     sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
                     sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
-                    sensorsNameslist.Add(Sensors[random.Next(0, 3)]); // 2 != 3
                         break;
 
             }
