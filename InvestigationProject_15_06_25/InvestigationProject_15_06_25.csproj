@@ -47,6 +47,7 @@
     <Compile Include="GAME\GameInstructions.cs" />
     <Compile Include="IranianAgent\Agent\IIranianAgent.cs" />
     <Compile Include="GAME\InvestigationManager.cs" />
+    <Compile Include="IranianAgent\Agent\SquadLeader.cs" />
     <Compile Include="IranianAgent\Iranian agent generators\IIranianAgentGenerator.cs" />
     <Compile Include="IranianAgent\GetRandIranianAgent.cs" />
     <Compile Include="IranianAgent\Iranian agent generators\JuniorIranianAgentGenerator.cs" />
