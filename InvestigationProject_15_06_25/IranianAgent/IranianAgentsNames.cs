@@ -8,14 +8,23 @@ namespace InvestigationProject_15_06_25
 {
     internal class IranianAgentsNames
     {
-        static Random random = new Random();
 
-        public static string FullName { get; } = FirstName(random.Next(0, 20)) + " " + LastName(random.Next(0, 20)); 
+        public string FullName()
+        {
+            Random random = new Random();
 
-  
+            string fullName = FirstName(random.Next(0,20)) +" "+ 
+                              LastName(random.Next(0,20));   
+
+            return fullName;
 
 
-        private static string FirstName(int rand) {
+        }
+
+
+
+
+        private string FirstName(int rand) {
             
             string[] firstName  = {
                     "Mohammad", "Fatemeh", "Zahra", "Ali", "Reza",
@@ -26,7 +35,7 @@ namespace InvestigationProject_15_06_25
             return firstName[rand];
         }
 
-        private static string LastName(int rand)
+        private string LastName(int rand)
         {
 
             string[] lastName = {

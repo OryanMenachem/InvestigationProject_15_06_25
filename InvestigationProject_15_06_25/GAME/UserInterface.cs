@@ -74,7 +74,7 @@ namespace InvestigationProject_15_06_25
         private static void NewGame()
         {
             InvestigationManager investigationManager = new InvestigationManager();
-            investigationManager.Manager();
+            investigationManager.GameManager();
 
         }
 

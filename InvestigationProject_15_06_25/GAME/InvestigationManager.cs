@@ -8,18 +8,19 @@ namespace InvestigationProject_15_06_25
 {
     internal class InvestigationManager
     {
-        static bool flag;
-        static bool end;
-        static IIranianAgent iranianAgent;
+        private bool flag;
+        private bool end;
+        private IIranianAgent iranianAgent;
         public InvestigationManager()
         {
-
-            iranianAgent = GetRandIranianAgent.GetIranianAgent();
+            iranianAgent = new GetRandIranianAgent().GetIranianAgent();
+           
             flag = true;
+            
             end = true;
         }
 
-        public void Manager() 
+        public void GameManager() 
         { 
             DisplayAgentNameAndRank();
 
@@ -27,21 +28,22 @@ namespace InvestigationProject_15_06_25
             {
                 flag = true;
 
-                DisplaySensors(iranianAgent);
+                DisplaySensors();
 
                 while (!flag)
                 {
-                    DisplaySensors(iranianAgent);
+                    DisplaySensors();
                 }
 
                 InputSensor();
-                Result(iranianAgent);
+                Result();
             }
+       
 
         }
 
 
-        private static void DisplayAgentNameAndRank()
+        private void DisplayAgentNameAndRank()
         {
 
             Console.Write("The agent to be interrogated is ");
@@ -54,13 +56,7 @@ namespace InvestigationProject_15_06_25
 
         }
 
-
-
-
-
-
-
-        private static void DisplaySensors(IIranianAgent iranianAgent)
+        private void DisplaySensors()
         {
 
             Console.WriteLine($"\nPlease attach one of the following sensors:\n" +
@@ -69,21 +65,19 @@ namespace InvestigationProject_15_06_25
                           
         }
 
-        private static void InputSensor()
+        private void InputSensor()
         {
 
 
             string sensor = ConsoleDesign.Input();
 
-           
-
             switch (sensor)
             {
                 case "sensor1":
-                    ActivateSensor1(iranianAgent);
+                    ActivateSensor1();
                     break;
                 case "sensor2":
-                    ActivateSensor2(iranianAgent);
+                    ActivateSensor2();
                     break;
                 default:
                     ConsoleDesign.ErrorColor($"The sensor '{sensor}', does not exist!\n");
@@ -93,8 +87,11 @@ namespace InvestigationProject_15_06_25
             }
 
         }
+           
 
-        private static void ActivateSensor1(IIranianAgent iranianAgent)
+
+
+        private void ActivateSensor1()
         {
             Sensor1 sensor1 = new Sensor1();
 
@@ -103,11 +100,16 @@ namespace InvestigationProject_15_06_25
             flag = false;
            
         }
+
+
+
+
+
           
             
         
 
-        private static void ActivateSensor2(IIranianAgent iranianAgent)
+        private void ActivateSensor2()
         {
             Sensor2 sensor2 = new Sensor2();
 
@@ -121,7 +123,7 @@ namespace InvestigationProject_15_06_25
 
 
 
-        private static void Result(IIranianAgent iranianAgent)
+        private void Result()
         {
             if (iranianAgent.SensitiveToSensors.Count() == 0)
             {
@@ -143,7 +145,7 @@ namespace InvestigationProject_15_06_25
 
         }
 
-        private static void DisplaySuccessMessage()
+        private void DisplaySuccessMessage()
         {
             ConsoleDesign.SuccessfullColor("Congratulations! you exposed the agent - ", false);
 
